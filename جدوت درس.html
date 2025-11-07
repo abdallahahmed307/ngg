@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سنتر مذاكرة وتركيز - المذاكرة أسهل!</title>
+    <style>
+        /* التنسيقات العامة */
+        :root {
+            --primary-color: #6a8e80; /* أخضر زيتوني هادئ للمذاكرة */
+            --secondary-color: #f5f5dc; /* لون بيج فاتح للخلفية */
+            --accent-color: #8faec5; /* أزرق فاتح هادئ */
+            --text-color: #333;
+            --light-text-color: #f7f7f7;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif; /* يفضل استخدام خطوط عربية مريحة */
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            direction: rtl; /* التأكيد على الاتجاه من اليمين لليسار */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* رأس الصفحة (الهيدر) */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 15px 0;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        /* شريط التنقل (الناف بار) */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* عشان يتظبط في الموبايل */
+        }
+
+        nav ul li {
+            margin: 5px 15px;
+        }
+
+        nav ul li a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--accent-color);
+            color: var(--light-text-color);
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #557068; /* درجة أغمق من primary */
+            transform: scale(1.05);
+        }
+
+        /* أقسام المحتوى (المواد والدورات) */
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--shadow-color);
+        }
+
+        .card h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            font-size: 0.95em;
+        }
+
+        .card-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .card-button:hover {
+            background-color: #6d8ba6;
+        }
+
+        /* الفوتر (تذييل الصفحة) */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        /* تنسيقات الموبايل */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 15px;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>🎒 سنتر المذاكرة المتكامل 📚</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#materials">كل المواد عربي</a></li>
+                    <li><a href="#schedule">جدول المذاكرة</a></li>
+                    <li><a href="#contact">كلمنا دلوقتي</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main class="container">
+
+        <p class="service-desc" style="color:var(--muted)">
+          بتع عبدااله
+        </p>
+
+        
+        <section id="home" class="hero">
+            <h2>مذاكرة بدون صداع! 🤯</h2>
+            <p>بنساعدك تنظم وقتك وتذاكر بتركيز وراحة. كل المواد اللي محتاجها موجودة، والجو هادي ومناسب.</p>
+            <a href="#materials" class="cta-button">شوف المواد المتاحة 🤩</a>
+        </section>
+
+        <section id="schedule" style="text-align: center; margin-bottom: 40px;">
+            <h2 class="section-title">⏱ نظم وقتك - جدول التركيز </h2>
+            <div class="card" style="background-color: #f0f8ff; border: 1px solid var(--accent-color);">
+                <h3>إزاي تستغل الموقع ده في تنظيم وقتك؟</h3>
+                <p>الموقع ده بيحاكي فكرة السنتر المنظم. اعتبر كل مادة هنا هي "حصة" محتاجة وقت محدد.</p>
+                <ul style="list-style: none; padding: 0; text-align: right;">
+                    <li>✅ *قسم المواد:* حط فيه المواد اللي محتاج تذاكرها (زي موادك في الكلية/المدرسة).</li>
+                    <li>✅ *الـ Card:* دي هي الـ "Task" أو المهمة. اكتب فيها الموضوع اللي هتذاكره.</li>
+                    <li>✅ *زر "ابدأ المذاكرة":* ده بيمثل بداية الـ "Focus Session" بتاعتك.</li>
+                </ul>
+                <p style="font-weight: bold; color: var(--primary-color);">طبق نفس الفكرة في كود الموقع عشان تتعلم إزاي تعمل موقع تنظيم دراسي ليك!</p>
+            </div>
+        </section>
+
+        <section id="materials">
+            <h2 class="section-title">📖 المواد المتاحة (بالعربي)</h2>
+            
+            <div class="grid">
+                
+                <div class="card">
+                    <h3> (السبت)</h3>
+                    <p>رياضات الساعه 12</p>
+                    <a href="#" class="card-button"> المذاكرة</a>
+                     <iframe src="https://www.youtube.com/embed/lSNHlMKZ0Ec?si=1byXck1qIi4Agcg5"allowfullscreen></iframe>
+                </div>
+
+                <div class="card">
+                    <h3>  (الأحد)</h3>
+                    <p>علوم الساعه 1</p>
+                    <a href="#" class="card-button">ابدأ المذاكرة</a>
+                     <iframe src="https://www.youtube.com/embed/-6LAXmZCbBw?si=GaHTrK_fCjUCaruY"allowfullscreen></iframe>
+                </div>
+                
+                <div class="card">
+                    <h3> (الثلاثاء)</h3>
+                    <p>رياضات الساعه 2</p>
+                    <a href="#" class="">ابدأ المذاكرة</a>
+                     <iframe src="https://www.youtube.com/embed/lSNHlMKZ0Ec?si=1byXck1qIi4Agcg5"allowfullscreen></iframe>
+                </div>
+
+                <div class="card">
+                    <h3>الأربغاء</h3>
+                    <p>دراسات الساعه 1</p>
+                    <a href="#" class="card-button">ابدأ المذاكرة</a>
+                     <iframe src="https://www.youtube.com/embed/EloyX3bGm5E?si=WvPFeZ0Pv8rhR18s"allowfullscreen></iframe>
+                </div>
+
+                <div class="card">
+                    <h3> (الخميس)</h3>
+                    <p>عربي الساعه 1</p>
+                    <a href="#" class="card-button">ابدأ المذاكرة</a>
+                     <iframe src="https://www.youtube.com/embed/eDksuvb0OEk?si=VF3o7Ulk4U5jySfN"allowfullscreen></iframe>
+                </div>
+
+              
+
+        <section id="contact" style="text-align: center; padding: 30px 20px; background-color: #e8f3ee; border-radius: 10px;">
+            <h2 class="section-title">💬 كلمنا دلوقتي</h2>
+            <p>لو عندك أي استفسار أو محتاج مساعدة في تنظيم جدولك، ابعتلنا رسالة وهنرد عليك بسرعة.</p>
+            <form style="max-width: 500px; margin: 0 auto; text-align: right;">
+                <p><label for="name">الاسم:</label><input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"></p>
+                <p><label for="email">الإيميل:</label><input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"></p>
+                <p><label for="message">رسالتك:</label><textarea id="message" name="message" rows="4" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;"></textarea></p>
+                <button type="submit" class="cta-button" style="margin-top: 15px;">ابعت الرسالة</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 سنتر المذاكرة. كل الحقوق محفوظة. بالتوفيق في دراستك! 🌟</p>
+    </footer>
+
+</body>
+</html>
